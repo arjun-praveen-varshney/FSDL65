@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polling System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .poll-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+      }
+      .options {
+        margin: 15px 0;
+      }
+      .option {
+        margin: 5px 0;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .results {
+        margin-top: 20px;
+      }
+      .result-bar {
+        background-color: #007bff;
+        height: 20px;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+      .result-label {
+        font-size: 14px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="poll-container">
+      <h2>Favorite Programming Language</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="poll" id="option1" value="JavaScript" />
+          <label for="option1">JavaScript</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="poll" id="option2" value="Python" />
+          <label for="option2">Python</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="poll" id="option3" value="Java" />
+          <label for="option3">Java</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="poll" id="option4" value="C++" />
+          <label for="option4">C++</label>
+        </div>
+      </div>
+      <button id="voteButton">Vote</button>
+      <div class="results">
+        <h3>Results:</h3>
+        <div id="results"></div>
+      </div>
+    </div>
+
+    <script src="poll.js"></script>
+  </body>
+</html>

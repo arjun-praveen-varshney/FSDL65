@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Blog Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        .main-content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-tag {
+            background: #f0f2f5;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .post-excerpt {
+            color: #4a4a4a;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: #6366f1;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #4f46e5;
+        }
+
+        .sidebar {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .widget-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 0.5rem;
+        }
+
+        .popular-posts {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .popular-post {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .popular-post img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .popular-post-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .categories {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .category-link {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            background: #f0f2f5;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #4a4a4a;
+            transition: background 0.3s;
+        }
+
+        .category-link:hover {
+            background: #e4e6eb;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .post-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Blog Title</h1>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <article class="post-card">
+                <img src="/api/placeholder/800/400" alt="Post image" class="post-image">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="category-tag">Technology</span>
+                        <span>5 min read</span>
+                        <span>April 10, 2024</span>
+                    </div>
+                    <h2 class="post-title">The Future of Artificial Intelligence in 2024</h2>
+                    <p class="post-excerpt">Discover how AI is transforming industries and shaping our future. From machine learning breakthroughs to ethical considerations, we explore the latest developments in artificial intelligence.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="/api/placeholder/800/400" alt="Post image" class="post-image">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="category-tag">Design</span>
+                        <span>3 min read</span>
+                        <span>April 8, 2024</span>
+                    </div>
+                    <h2 class="post-title">Web Design Trends to Watch in 2024</h2>
+                    <p class="post-excerpt">Explore the latest web design trends that are revolutionizing user experience and visual aesthetics. From minimalist designs to immersive interactions.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="/api/placeholder/800/400" alt="Post image" class="post-image">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="category-tag">Development</span>
+                        <span>4 min read</span>
+                        <span>April 5, 2024</span>
+                    </div>
+                    <h2 class="post-title">Getting Started with Web Components</h2>
+                    <p class="post-excerpt">Learn how to create reusable web components using modern web technologies. A step-by-step guide for beginners and intermediate developers.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Popular Posts</h3>
+                <div class="popular-posts">
+                    <div class="popular-post">
+                        <img src="/api/placeholder/80/80" alt="Popular post">
+                        <h4 class="popular-post-title">10 Tips for Better Productivity</h4>
+                    </div>
+                    <div class="popular-post">
+                        <img src="/api/placeholder/80/80" alt="Popular post">
+                        <h4 class="popular-post-title">Understanding CSS Grid Layout</h4>
+                    </div>
+                    <div class="popular-post">
+                        <img src="/api/placeholder/80/80" alt="Popular post">
+                        <h4 class="popular-post-title">The Rise of No-Code Platforms</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Categories</h3>
+                <div class="categories">
+                    <a href="#" class="category-link">
+                        <span>Technology</span>
+                        <span>24</span>
+                    </a>
+                    <a href="#" class="category-link">
+                        <span>Design</span>
+                        <span>18</span>
+                    </a>
+                    <a href="#" class="category-link">
+                        <span>Development</span>
+                        <span>32</span>
+                    </a>
+                    <a href="#" class="category-link">
+                        <span>Business</span>
+                        <span>15</span>
+                    </a>
+                    <a href="#" class="category-link">
+                        <span>Lifestyle</span>
+                        <span>9</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

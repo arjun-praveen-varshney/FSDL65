@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Wireless Headphones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-image {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-details h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #2d3436;
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            color: #4a4a4a;
+            margin-bottom: 2rem;
+        }
+
+        .buy-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+
+        .features {
+            margin: 2rem 0;
+        }
+
+        .features h2 {
+            margin-bottom: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .reviews {
+            margin: 3rem 0;
+        }
+
+        .review-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .stars {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4a4a4a;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-grid">
+            <div class="product-image">
+                <img src="data:image/jpeg;base64,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" alt="Premium Wireless Headphones">
+            </div>
+            <div class="product-details">
+                <h1>Premium Wireless Headphones</h1>
+                <div class="price">$299.99</div>
+                <p class="description">
+                    Experience unparalleled sound quality with our premium wireless headphones. 
+                    Featuring advanced noise cancellation, premium materials, and up to 30 hours 
+                    of battery life. Perfect for music enthusiasts and professionals alike.
+                </p>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Active Noise Cancellation</h3>
+                    <p>Industry-leading noise cancellation for immersive listening experience</p>
+                </div>
+                <div class="feature-item">
+                    <h3>30-Hour Battery Life</h3>
+                    <p>Extended playtime with quick charging capability</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Premium Sound Quality</h3>
+                    <p>Hi-Fi audio with deep bass and crystal clear highs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <h3>Amazing Sound Quality!</h3>
+                <p>These headphones exceeded my expectations. The sound quality is incredible and the noise cancellation works perfectly.</p>
+                <small>- John D.</small>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <h3>Worth Every Penny</h3>
+                <p>The build quality is exceptional and the battery life is impressive. Highly recommended!</p>
+                <small>- Sarah M.</small>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Have Questions?</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

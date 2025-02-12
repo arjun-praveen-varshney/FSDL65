@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cuisine - Restaurant Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        body {
+            background: #f8f5f2;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('/api/placeholder/1920/600') center/cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .menu-nav {
+            background: #2d2d2d;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu-nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .menu-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .menu-nav a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .menu-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2d2d2d;
+            display: inline-block;
+            padding: 0 1rem;
+            background: #f8f5f2;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #2d2d2d;
+            z-index: -1;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-image {
+            position: relative;
+            padding-top: 75%;
+        }
+
+        .item-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-content {
+            padding: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            color: #2d2d2d;
+        }
+
+        .item-price {
+            font-size: 1.2rem;
+            color: #c17817;
+            font-weight: bold;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .item-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .special-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #c17817;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transform: rotate(5deg);
+        }
+
+        .video-section {
+            position: relative;
+            padding-top: 56.25%;
+            margin: 4rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .chef-note {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .chef-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .chef-note {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>La Cuisine</h1>
+        <p>Experience culinary excellence with our carefully crafted menu</p>
+    </header>
+
+    <nav class="menu-nav">
+        <ul>
+            <li><a href="#starters">Starters</a></li>
+            <li><a href="#main-course">Main Course</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#drinks">Drinks</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="menu-section" id="starters">
+            <div class="section-title">
+                <h2>Starters</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="/api/placeholder/400/300" alt="Bruschetta">
+                        <span class="special-badge">Chef's Special</span>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Bruschetta</h3>
+                            <span class="item-price">$12</span>
+                        </div>
+                        <p class="item-description">Grilled bread rubbed with garlic and topped with diced tomatoes, fresh basil, and extra virgin olive oil.</p>
+                        <div class="item-tags">
+                            <span class="tag">Vegetarian</span>
+                            <span class="tag">Italian</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="/api/placeholder/400/300" alt="Calamari">
+                    </div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Crispy Calamari</h3>
+                            <span class="item-price">$16</span>
+                        </div>
+                        <p class="item-description">Tender squid rings lightly battered and fried, served with lemon aioli and marinara sauce.</p>
+                        <div class="item-tags">
+                            <span class="tag">Seafood</span>
+                            <span class="tag">Crispy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="video-section">
+            <img src="/api/placeholder/1920/1080" alt="Kitchen atmosphere">
+        </div>
+
+        <div class="chef-note">
+            <img src="/api/placeholder/150/150" alt="Chef" class="chef-image">
+            <div>
+                <h3>A Note from Chef Michel</h3>
+                <p>"Our menu is crafted with passion, using only the finest ingredients sourced from local producers. Each dish tells a story of tradition and innovation, bringing you an unforgettable dining experience."</p>
+            </div>
+        </div>
+
+        <section class="menu-section" id="main-course">
+            <div class="section-title">
+                <h2>Main Course</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="/api/placeholder/400/300" alt="Steak">
+                        <span class="special-badge">Popular</span>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Filet Mignon</h3>
+                            <span class="item-price">$42</span>
+                        </div>
+                        <p class="item-description">8oz prime beef tenderloin, served with roasted vegetables and red wine reduction.</p>
+                        <div class="item-tags">
+                            <span class="tag">Beef</span>
+                            <span class="tag">Gluten-free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="/api/placeholder/400/300" alt="Salmon">
+                    </div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Grilled Salmon</h3>
+                            <span class="item-price">$34</span>
+                        </div>
+                        <p class="item-description">Fresh Atlantic salmon with quinoa pilaf and lemon butter sauce.</p>
+                        <div class="item-tags">
+                            <span class="tag">Seafood</span>
+                            <span class="tag">Healthy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
