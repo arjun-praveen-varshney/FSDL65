@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://Arjun:A_V_2314@cluster0.cw3vk.mongodb.net/lab-progress-tracker",
+    "jwtSecret": "your_jwt_secret",
+    "uploadDir": "uploads/"
+  }
