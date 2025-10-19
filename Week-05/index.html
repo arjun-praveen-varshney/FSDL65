@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale
+=1.0">
+<title>JavaScript Error Handling Demo</title>
+<script>
+// Function to validate input and handle errors
+function validateInput() {
+let input = document.getElementById("inputField").value;
+try {
+if (input === "") {
+throw "Input cannot be empty!";
+}
+
+
+if (isNaN(input)) {
+throw "Please enter a valid number!";
+}
+return parseFloat(input);
+} catch(err) {
+alert("Validation Error: " + err);
+return null;
+}
+}
+// Function to process data using arrays, strings, and date
+function processData() {
+let number = validateInput();
+if (number !== null) {
+// Create an array and perform operations
+let numbers = [number, number * 2, number * 3];
+// Convert array to string
+let resultString = "Numbers: " + numbers.join(", ");
+// Get current date and format it
+let currentDate = new Date();
+let dateString = currentDate.toLocaleString();
+// Display results
+document.getElementById("result").innerText = resultString +
+"\nDate: " + dateString;
+}
+}
+</script>
+</head>
+<body>
+<h1>JavaScript Error Handling and Data Processing Demo</h1>
+<p>Enter a number and click Submit:</p>
+<input type="text" id="inputField" placeholder="Enter number">
+<button onclick="processData()">Submit</button>
+<pre id="result"></pre>
+</body>
+</html>

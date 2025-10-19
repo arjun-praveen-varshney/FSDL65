@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale
+=1.0">
+<title>JavaScript Features Demo</title>
+<script>
+// Variables and Operators
+let a = 5;
+let b = 10;
+
+
+let sum = a + b;
+// Function to display sum using alert
+function displaySum() {
+alert("The sum is: " + sum);
+}
+// Class and Object
+class Person {
+constructor(name, age) {
+this.name = name;
+this.age = age;
+}
+greet() {
+return "Hello, my name is " + this.name;
+}
+}
+const person1 = new Person("Alice", 25);
+// Event Listener for button click
+window.onload = function() {
+document.getElementById("btnAlert").addEventListener("click",
+function() {
+alert(person1.greet());
+});
+};
+// Loop and Condition demonstration
+function checkNumbers() {
+let result = "";
+for(let i = 1; i <= 5; i++){
+if(i % 2 === 0){
+result += i + " is even\n";
+} else {
+result += i + " is odd\n";
+}
+}
+document.getElementById("output").innerText = result;
+}
+</script>
+</head>
+
+
+<body>
+<h1>JavaScript Features Demo</h1>
+<p>Click the button to see a greeting using JavaScript classes and
+events.</p>
+<button id="btnAlert">Greet</button>
+<br><br>
+<button onclick="checkNumbers()">Check Numbers</button>
+<pre id="output"></pre>
+</body>
+</html>
