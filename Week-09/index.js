@@ -9,7 +9,7 @@ app.use(express.json());
 // Serve static files if needed (e.g., CSS/JS)
 app.use(express.static(path.join(__dirname, "public")));
 // MongoDB URI and Database Name
-const uri = "mongodb+srv://Arjun:A_V_2314@cluster0.cw3vk.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://<your-username>:<your-password>@<your-cluster>/?retryWrites=true&w=majority";
 const dbName = "studentdb";
 let db; // To store the database connection
 // Main function to start server after DB connection
