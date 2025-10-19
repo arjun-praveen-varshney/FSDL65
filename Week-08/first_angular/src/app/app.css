@@ -1,0 +1,16 @@
+h1 {
+color: #1976d2;
+}
+label {
+display: inline-block;
+width: 80px;
+color: #1976d2;
+}
+input {
+margin-bottom: 10px;
+width: 200px;
+}
+div {
+margin-top: 5px;
+color: red;
+}

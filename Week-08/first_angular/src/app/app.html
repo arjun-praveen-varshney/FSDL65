@@ -1,0 +1,44 @@
+<h1>Student Record</h1>
+<form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)"
+novalidate>
+<div>
+<label>Name:</label>
+<input type="text" name="name" [(ngModel)]="student['name']"
+required />
+<div *ngIf="studentForm.controls['name']?.invalid">Name is
+required.</div>
+</div>
+<br />
+<div>
+<label>Age:</label>
+<input type="number" name="age" [(ngModel)]="student['age']"
+required />
+<div *ngIf="studentForm.controls['age']?.invalid">Age is
+required.</div>
+</div>
+<br />
+<div>
+<label>Email:</label>
+<input
+type="email"
+name="email"
+[(ngModel)]="student.email"
+required
+email
+/>
+<div *ngIf="studentForm.controls['email']?.invalid">
+Valid email is required.
+</div>
+
+
+</div>
+<br />
+<button type="submit" [disabled]="!studentForm.valid">Submit</
+button>
+</form>
+<div *ngIf="submitted">
+<h2>Submitted Student Record:</h2>
+<p>Name: {{ student["name"] }}</p>
+<p>Age: {{ student["age"] }}</p>
+<p>Email: {{ student["email"] }}</p>
+</div>
